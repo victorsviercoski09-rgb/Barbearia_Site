@@ -1,0 +1,100 @@
+/* ==========================================================================
+   servicos.css
+   ========================================================================== */
+
+.services-hero { padding: 72px 0 24px; }
+
+.services-grid-section { padding: 40px 0 100px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.service-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 30px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 220ms var(--ease), transform 220ms var(--ease);
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.service-card-featured {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, rgba(201,154,50,0.06), var(--bg-card) 40%);
+}
+
+.featured-tag {
+  position: absolute;
+  top: -11px;
+  left: 26px;
+  background: var(--accent);
+  color: #0a0a0a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  transition: border-color 220ms var(--ease), background 220ms var(--ease);
+}
+
+.service-card:hover .service-icon {
+  border-color: var(--accent);
+}
+
+.service-desc { font-size: 13.5px; min-height: 40px; }
+
+.service-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.service-price {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.service-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.service-btn { width: 100%; margin-top: 4px; }
+
+@media (max-width: 960px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px) {
+  .services-grid { grid-template-columns: 1fr; }
+}

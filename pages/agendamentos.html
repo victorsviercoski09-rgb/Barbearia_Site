@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agendamentos — Barbearia Noturno</title>
+<meta name="description" content="Faça sua solicitação de agendamento na Barbearia Noturno. Escolha serviço, data e horário.">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/agendamentos.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container">
+    <a href="../index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#C99A32" stroke-width="1"/>
+        <path d="M13 13L27 27M27 13L13 27" stroke="#C99A32" stroke-width="1.3" stroke-linecap="round"/>
+        <circle cx="13" cy="13" r="2.4" stroke="#C99A32" stroke-width="1.1"/>
+        <circle cx="13" cy="27" r="2.4" stroke="#C99A32" stroke-width="1.1"/>
+      </svg>
+      <span class="brand-name">
+        <span class="word">NOTURNO</span>
+        <span class="est">BARBEARIA · EST. 2024</span>
+      </span>
+    </a>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="servicos.html">Serviços</a></li>
+        <li><a href="agendamentos.html" class="active">Agendamentos</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="agendamentos.html" class="btn btn-primary">Agendar Agora</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="agendamentos.html" class="active">Agendamentos</a>
+    <a href="agendamentos.html" class="btn btn-primary">Agendar Agora</a>
+  </div>
+</header>
+
+<main>
+  <section class="booking-hero">
+    <div class="container section-head">
+      <p class="eyebrow">Reserve seu horário</p>
+      <h2>Faça seu Agendamento</h2>
+      <p>Preencha os dados abaixo. Esta é uma simulação de agendamento — nenhum dado é armazenado em um servidor.</p>
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <div class="container booking-grid">
+
+      <form class="booking-form card" id="bookingForm" novalidate>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="nome">Nome completo</label>
+            <div class="input-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 20c1.5-4 4.5-6 7-6s5.5 2 7 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name">
+            </div>
+            <span class="field-error" data-error-for="nome">Informe seu nome completo.</span>
+          </div>
+
+          <div class="field">
+            <label for="telefone">Telefone</label>
+            <div class="input-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 5c0 8 7 15 15 15l2-4-5-2-1.5 2A12 12 0 018 9.5L10 8 8 3 4 5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+              <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" autocomplete="tel">
+            </div>
+            <span class="field-error" data-error-for="telefone">Informe um telefone para contato.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="servico">Serviço</label>
+          <div class="input-wrap">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="2.2" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="18" r="2.2" stroke="currentColor" stroke-width="1.3"/><path d="M8 7L20 18M8 17L20 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+            <select id="servico" name="servico">
+              <option value="" disabled selected>Selecione o serviço</option>
+              <option value="Corte Masculino">Corte Masculino — R$ 50,00</option>
+              <option value="Barba">Barba — R$ 40,00</option>
+              <option value="Corte + Barba">Corte + Barba — R$ 80,00</option>
+              <option value="Acabamento">Acabamento — R$ 30,00</option>
+              <option value="Sobrancelha">Sobrancelha — R$ 20,00</option>
+            </select>
+          </div>
+          <span class="field-error" data-error-for="servico">Escolha um serviço.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="data">Data</label>
+            <div class="input-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.3"/></svg>
+              <input type="date" id="data" name="data">
+            </div>
+            <span class="field-error" data-error-for="data">Escolha uma data.</span>
+          </div>
+
+          <div class="field">
+            <label for="horario">Horário</label>
+            <div class="input-wrap">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+              <select id="horario" name="horario">
+                <option value="" disabled selected>Selecione o horário</option>
+                <option>09:00</option><option>10:00</option><option>11:00</option>
+                <option>13:00</option><option>14:00</option><option>15:00</option>
+                <option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option>
+              </select>
+            </div>
+            <span class="field-error" data-error-for="horario">Escolha um horário.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="obs">Observações <span class="optional">(opcional)</span></label>
+          <div class="input-wrap input-wrap-textarea">
+            <textarea id="obs" name="obs" rows="3" placeholder="Alguma preferência ou observação?"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.3"/></svg>
+          Confirmar Agendamento
+        </button>
+      </form>
+
+      <aside class="booking-info">
+        <div class="card booking-notes">
+          <div class="booking-notes-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.3"/></svg>
+          </div>
+          <h4>Importante</h4>
+          <ul>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C99A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Chegue com 10 minutos de antecedência.
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C99A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Cancelamentos com até 2h de antecedência.
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C99A32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Dúvidas? Fale com nosso assistente virtual.
+            </li>
+          </ul>
+        </div>
+
+        <div class="booking-photo" role="img" aria-label="Cadeira de barbeiro em ambiente escuro e elegante">
+          <svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="p2" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#171717"/><stop offset="100%" stop-color="#0c0c0c"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="260" fill="url(#p2)"/>
+            <circle cx="200" cy="40" r="6" fill="#C99A32" opacity="0.85"/>
+            <circle cx="200" cy="40" r="18" fill="#C99A32" opacity="0.12"/>
+            <g transform="translate(105,90)">
+              <ellipse cx="95" cy="150" rx="120" ry="10" fill="#000" opacity="0.5"/>
+              <rect x="20" y="112" width="14" height="38" rx="3" fill="#181818" stroke="#2b2b2b"/>
+              <rect x="130" y="112" width="14" height="38" rx="3" fill="#181818" stroke="#2b2b2b"/>
+              <rect x="6" y="26" width="150" height="24" rx="8" fill="#101010" stroke="#2b2b2b"/>
+              <rect x="22" y="42" width="118" height="80" rx="14" fill="#141414" stroke="#2b2b2b"/>
+              <rect x="6" y="0" width="24" height="110" rx="10" fill="#131313" stroke="#2b2b2b"/>
+              <rect x="-4" y="106" width="170" height="12" rx="6" fill="#181818" stroke="#2b2b2b"/>
+            </g>
+          </svg>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<!-- overlay de confirmação -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-card">
+    <div class="confirm-check">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#080808" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h3>Agendamento Solicitado</h3>
+    <p class="confirm-sub">Seu horário foi registrado nesta simulação. Nenhum dado real foi enviado a um servidor.</p>
+    <div class="confirm-details">
+      <div><span>Serviço</span><strong id="confirmServico">—</strong></div>
+      <div><span>Data</span><strong id="confirmData">—</strong></div>
+      <div><span>Horário</span><strong id="confirmHorario">—</strong></div>
+    </div>
+    <button class="btn btn-primary" id="confirmClose">Fechar</button>
+  </div>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div id="chatbot-root"></div>
+
+<script src="../config.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/agendamento.js"></script>
+<script src="../js/chatbot.js"></script>
+</body>
+</html>
